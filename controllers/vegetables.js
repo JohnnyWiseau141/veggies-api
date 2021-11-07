@@ -25,14 +25,26 @@ function create(req, res) {
   .then(vegetable => {
     res.json(vegetable)
   })
+  .catch(err=> {
+    res.json(err)
+  })
 }
 
 function update(req, res) {
-  
+  Vegetable.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(vegetable => {
+    res.json(vegetable)
+  })
+  .catch(err=> {
+    res.json(err)
+  })
 }
 
 function deleteVegetable(req, res) {
-  
+  Vegetable.findByIdAndDelete(req.params.id)
+  .then(vegetable => {
+    res.json(vegetable)
+  })
 }
 
 export {

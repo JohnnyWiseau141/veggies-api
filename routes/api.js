@@ -10,10 +10,13 @@ router.get('/vegetables/:id', vegetablesCtrl.show)
 
 // POST	/api/vegetables	Add a vegetable
 router.post('/vegetables', vegetablesCtrl.create)
-// PUT	/api/vegetables/:id	Update a vegetable
-// DELETE	/api/vegetables/:id	Delete a vegetable
 
-//testing my commits
+// PUT	/api/vegetables/:id	Update a vegetable
+router.put('/vegetables/:id', vegetablesCtrl.update)
+
+// DELETE	/api/vegetables/:id	Delete a vegetable
+router.delete('/vegetables/:id', vegetablesCtrl.delete)
+
 
 export {
   router
